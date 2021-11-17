@@ -8,6 +8,9 @@ import PokePerfil from "./components/PokePerfil";
 import PokePerfilOne from "./components/PokePerfilOne";
 import {Route} from "react-router-dom";
 import Youtube from "./components/youtube/Youtube";
+import Pokemon from './components/pokemon/Pokemon';
+import DetailPoke from './components/pokemon/DetailPoke';
+import Favorites from './components/pokemon/Favorites';
 
 
 
@@ -34,6 +37,15 @@ function Routes() {
             </Route>
             <Route path="/youtube">
                 <Youtube></Youtube>
+            </Route>
+            <Route path="/redux">
+                <Pokemon></Pokemon>
+            </Route>
+            <Route path="/detailpoke/:name">
+                <DetailPoke></DetailPoke>
+            </Route>
+            <Route path="/favorites">
+                <Favorites></Favorites>
             </Route>
         </div>
     );
