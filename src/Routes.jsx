@@ -11,6 +11,7 @@ import Youtube from "./components/youtube/Youtube";
 import Pokemon from './components/pokemon/Pokemon';
 import DetailPoke from './components/pokemon/DetailPoke';
 import Favorites from './components/pokemon/Favorites';
+import Post from './components/Posts/Post';
 
 
 
@@ -46,6 +47,9 @@ function Routes() {
             </Route>
             <Route path="/favorites">
                 <Favorites></Favorites>
+            </Route>
+            <Route path="/posts">
+                <Post></Post>
             </Route>
         </div>
     );
