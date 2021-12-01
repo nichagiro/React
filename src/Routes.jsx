@@ -12,6 +12,8 @@ import Pokemon from './components/pokemon/Pokemon';
 import DetailPoke from './components/pokemon/DetailPoke';
 import Favorites from './components/pokemon/Favorites';
 import Post from './components/Posts/Post';
+import Computadors from './components/computadores/Computadors';
+import FormCompu from './components/computadores/FormCompu';
 
 
 
@@ -50,6 +52,12 @@ function Routes() {
             </Route>
             <Route path="/posts">
                 <Post></Post>
+            </Route>
+            <Route exact path="/computadores">
+                <Computadors></Computadors>
+            </Route>
+            <Route path="/computadores/crear">
+                <FormCompu></FormCompu>
             </Route>
         </div>
     );

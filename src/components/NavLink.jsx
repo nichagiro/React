@@ -12,6 +12,7 @@ function NavLinkComponent() {
             <NavLink to="/youtube" className="nav-link" activeClassName="text-danger fw-bold">Youtube</NavLink >
             <NavLink to="/redux" className="nav-link" activeClassName="text-primary fw-bold">Redux</NavLink >
             <NavLink to="/posts" className="nav-link" activeClassName="text-secondary fw-bold">Posts</NavLink >
+            <NavLink to="/computadores" className="nav-link" activeClassName="text-info fw-bold">Computadores</NavLink >
         </div>
     );
 }

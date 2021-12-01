@@ -13,4 +13,16 @@ import Swal from "sweetalert2";
             title, text, 'success'
         )
     }
+    export const SuccessRedirect = (title, url) => {
+        Swal.fire({
+            title: title,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Aceptar',
+            icon: 'success',
+          }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = url;
+            }
+          })
+    }
 
