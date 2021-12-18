@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import FormHook from './components/formHook';
-// import Form from './components/form';
+import Form from './components/form';
 // import PokApi from './components/api'
 import SuperForm from './components/SuperForm';
 import UserTable from './components/UsersTable';
@@ -47,7 +47,7 @@ const App = () =>{
   }
   return (
     <div>
-      {/* <Form/> */}
+      <Form/>
       {/* <FormHook /> */}
       {/* <PokApi /> */}
       {/* <SuperForm /> */}

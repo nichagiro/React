@@ -1,0 +1,1 @@
+export const allResources = 'https://jsonplaceholder.typicode.com/posts';

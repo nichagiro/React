@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit'
 import axios from 'axios';
 import Swal from 'sweetalert2'
 
-
 const api = 'https://pokeapi.co/api/v2/pokemon/';
 
  export const pokemonsSlice = createSlice({

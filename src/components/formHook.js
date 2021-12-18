@@ -16,7 +16,7 @@ const FormHook = () => {
         phone: yup.number().positive().required(),
       }).required();
 
-    const { register, handleSubmit, reset,formState:{ errors } } = useForm({
+    const { register, handleSubmit, reset, formState:{ errors } } = useForm({
     resolver: yupResolver(schema)
     });
 

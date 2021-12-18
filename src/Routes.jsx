@@ -14,6 +14,9 @@ import Favorites from './components/pokemon/Favorites';
 import Post from './components/Posts/Post';
 import Computadors from './components/computadores/Computadors';
 import FormCompu from './components/computadores/FormCompu';
+import Pruebas from './components/pruebas';
+import Mui from './components/mui/index';
+
 
 
 
@@ -58,6 +61,12 @@ function Routes() {
             </Route>
             <Route path="/computadores/crear">
                 <FormCompu></FormCompu>
+            </Route>
+            <Route path="/pruebas">
+                <Pruebas></Pruebas>
+            </Route>
+            <Route path="/mui">
+                <Mui></Mui>
             </Route>
         </div>
     );

@@ -4,6 +4,7 @@ import counterReducer from './features/counterSlice'
 import pokemonsReducer from './features/pokemonSlice'
 import postReducer  from './features/postSlice'
 import compuReducer  from './features/compuSlice'
+import muiReducer  from './features/muiSlice'
 
 
 export default configureStore({
@@ -12,6 +13,7 @@ export default configureStore({
     pokemons: pokemonsReducer,
     post: postReducer,
     computadores: compuReducer,
+    mui: muiReducer,
     form: formReducer
   },
 })

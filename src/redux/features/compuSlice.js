@@ -22,19 +22,32 @@ const API = process.env.REACT_APP_API_COMPU;
     compuUnselect: (state, action) => {
     return {...state, selectCompu:action.payload}
     },
+
   },
 })
 
-export const GetCompu = () => async (dispatch) => {
+export const GetCompu = (search) => async (dispatch) => {
     try {
-        const res = await axios.get(API, {
-            params: {
-                paginate: true,
-                numPaginate: 12
-            }
-        });
-        dispatch(getCompu(res.data));
-        dispatch(compuUnselect([]));
+        if (search) {
+            const res = await axios.get(API, {
+                params: {
+                    paginate: true,
+                    numPaginate: 12,
+                    search: search
+                }
+            });
+            dispatch(getCompu(res.data));
+        }
+        else{
+            const res = await axios.get(API, {
+                params: {
+                    paginate: true,
+                    numPaginate: 12
+                }
+            });
+            dispatch(getCompu(res.data));
+            dispatch(compuUnselect([]));
+        }
         
     } catch (error) {
         Error();
@@ -96,6 +109,6 @@ export const destroyCompu = () => async (dispatch, getState) => {
         
 }
 
-export const { getCompu, compuSelect, compuUnselect} = compuSlice.actions
+export const { getCompu, compuSelect, compuUnselect } = compuSlice.actions
 
 export default compuSlice.reducer

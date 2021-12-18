@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 
 const Form = () => {
-    const [data, setdata] = useState({
-        name: null,
-        phone: null
-    })
+   
+    const [data, setdata] = useState()
+
     const changeForm = (e) => {
         setdata({
-            ...data,
+            ...data, 
             [e.target.name] : e.target.value,
             [e.target.phone] : e.target.value
         });
     }
+ 
     const viewData = (e) => {
         e.preventDefault();
         alert(data.name+' '+data.phone);
