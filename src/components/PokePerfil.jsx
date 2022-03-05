@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, {useEffect, useState} from 'react'
 import {Link} from "react-router-dom";
+import ky from 'ky';
 
 const PokePerfil = () => {
     useEffect(() => {
@@ -20,6 +21,10 @@ const PokePerfil = () => {
                     alert("Ocurrio un error, no se pudo procesar los datos");
                 }
             )
+        
+        // axios.get(api)
+        // ky(api).json()
+     
     }
 
     return (

@@ -46,6 +46,7 @@ const renderField = ({
 
 let GestionPost = (props) => {
 
+    console.log(props)
     const { handleSubmit, reset } = props;
 
     const btnDelete =  useSelector(state => state.post.btnDelete); // disabled 

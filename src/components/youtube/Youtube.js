@@ -36,7 +36,7 @@ const Youtube = () => {
         .catch(error => {
             alert('ocurrio un error en la consulta')
             console.log(error)
-        })
+        })    
     }
 
     // props trae  el video seleccionado del Component DataList
