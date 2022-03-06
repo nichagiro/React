@@ -16,7 +16,8 @@ import Computadors from './components/computadores/Computadors';
 import FormCompu from './components/computadores/FormCompu';
 import Pruebas from './components/pruebas';
 import Mui from './components/mui/index';
-import Context from './components/context/containers';
+import Hooks from './components/hooks/container/Index';
+
 
 
 
@@ -68,9 +69,9 @@ function Routes() {
             <Route path="/mui">
                 <Mui></Mui>
             </Route>
-            <Route path="/context">
-                <Context></Context>
-            </Route>
+            <Route path="/hooks">
+                <Hooks></Hooks>
+            </Route>            
         </div>
     );
 }

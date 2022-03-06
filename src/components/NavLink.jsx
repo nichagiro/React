@@ -16,6 +16,7 @@ function NavLinkComponent() {
             <NavLink to="/mui" className="nav-link" activeClassName="text-info fw-bold">Mui</NavLink >
             <NavLink to="/pruebas" className="nav-link" activeClassName="text-success fw-bold">Prueba</NavLink >
             <NavLink to="/context" className="nav-link" activeClassName="text-danger fw-bold">Context</NavLink >
+            <NavLink to="/hooks" className="nav-link" activeClassName="text-danger fw-bold">Hooks</NavLink >
         </div>
     );
 }
