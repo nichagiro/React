@@ -7,7 +7,7 @@ const ReactEfect = () => {
     //mount()
     React.useEffect(() => {
         GetUsers();
-     }, [])
+     },[])
      
      const GetUsers = () => {
          Axios.get('https://jsonplaceholder.typicode.com/users')

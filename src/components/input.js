@@ -1,18 +1,17 @@
-import React, {Fragment} from "react";
-import { Controller } from "react-hook-form";
+import React, { Fragment } from "react";
+import { useFormContext } from "react-hook-form";
+import { ErrorMessage } from '@hookform/error-message';
 
-const Input = ({control,name,error}) => {
+
+const Input = () => {
+    const methods = useFormContext();
+
     return (
-        <Fragment>
-            <Controller
-            control={control}
-            name={name}
-            render={({ field }) => <input className="form-control w-50" {...field} onChange={(e) => field.onChange(e.target.value)} />}
-            defaultValue=""
-            />
-            <p className="text-danger">{error}</p> 
-        </Fragment>    
-    );
+        <>
+            <input {...methods.register('nada')} className="form-control w-25" />
+            <ErrorMessage errors={methods.errors} name="nada" as='error' />
+        </>
+    )
 }
- 
+
 export default Input;

@@ -12,7 +12,8 @@ const ModalCatchAxios = () => {
         return response;
     }, function (error) {
         HandleSetError(error)
-        return Promise.reject(error);
+        return console.log(error)
+        // return Promise.reject(error);
     });
 
     const HandleSetError = error => {

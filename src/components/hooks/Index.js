@@ -1,10 +1,25 @@
-import axios from 'axios'
+import Select from 'react-select';
 import React from 'react'
+import { GetNames, GetPhone } from 'faker-overweb';
 
 const Index = (props) => {
+    const [selectedOption, setSelectedOption] = React.useState(null);
 
-    React.useEffect(() => {
-    }, [])
+    const options = [
+        { value: '0', label: 'Todos' },
+        { value: 'chocolate', label: 'Chocolate' },
+        { value: 'strawberry', label: 'Strawberry' },
+        { value: 'vanilla', label: 'Vanilla' },
+    ];
+
+    const handleChange = (selectedOption) => {
+        if (selectedOption.find(find => find.value == 0)) {
+            setSelectedOption(options)
+        }
+
+        console.log(`Option selected:`, selectedOption)
+    };
+
 
     const cambio = async () => {
         await props.setState({
@@ -16,10 +31,24 @@ const Index = (props) => {
                 }
             }
         })
+        console.log(GetNames())
+        console.log(GetNames())
+        console.log(GetNames())
+        console.log(GetNames())
+        console.log(GetPhone())
+        console.log(GetPhone())
     }
 
     return (
         <div>
+            <div className='m-5 w-25'>
+                <Select
+                    defaultValue={selectedOption}
+                    onChange={handleChange}
+                    options={options}
+                    isMulti
+                />
+            </div>
             {
                 props.state.pokemons &&
                 <h3>

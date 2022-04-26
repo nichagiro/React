@@ -4,19 +4,28 @@ import { useStore, useDispatch } from "../store/StoreProvider";
 import { types } from '../store/StoreReducer';
 import { ExecuteGetPost } from '../utils/url';
 import ModalCatchAxios from './comunes/ModalCatchAxios';
+import axios from 'axios';
+
 
 const ListarBlog = () => {
     const dispatch = useDispatch()
     const state = useStore()
 
     useEffect(async () => {
-        getPost();
+        // await axios.get('https://pokeapi.co/api/v2/pokemoni/')
+        // await axios.get('https://jsonplaceholder.typicode.com/postsi/')
+        // await axios.get('https://api.aniapi.com/v1/useri/')
+        await getPost();
     }, [])
 
     const getPost = async () => {
         await dispatch({
             type: types.FecthBlog,
             payload: await ExecuteGetPost()
+        })
+
+        await dispatch({
+            type: types.DataCurrent        
         })
     }
 

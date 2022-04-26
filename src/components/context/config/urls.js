@@ -1,1 +1,1 @@
-export const FecthPost =  'https://jsonplaceholder.typicode.com/postss';
+export const FecthPost =  'https://jsonplaceholder.typicode.com/posts';

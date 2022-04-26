@@ -17,6 +17,8 @@ import FormCompu from './components/computadores/FormCompu';
 import Pruebas from './components/pruebas';
 import Mui from './components/mui/index';
 import Hooks from './components/hooks/container/Index';
+import Context from './components/context/containers/index';
+
 
 
 
@@ -69,6 +71,9 @@ function Routes() {
             <Route path="/mui">
                 <Mui></Mui>
             </Route>
+            <Route path="/context">
+                <Context></Context>
+            </Route> 
             <Route path="/hooks">
                 <Hooks></Hooks>
             </Route>            

@@ -4,6 +4,7 @@ import StoreHeader from "./StoreHeader"
 const types = {
     FecthBlog: 'FecthBlog',
     SetBlog: 'SetBlog',
+    DataCurrent : 'DataCurrent'
 }
 
 const initialStore = {
@@ -22,7 +23,12 @@ const storeReducer = (state, action) => {
         return {
             ...state,
             blogs: []
-        }            
+        }
+        case types.DataCurrent:
+            return {
+                ...state,
+                dataCurrent: 'nicolas fecha'
+            }               
         default:
             return state;
     } 

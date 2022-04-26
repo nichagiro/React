@@ -1,1 +1,1 @@
-export const fetchPoke = 'https://pokeapi.co/api/v2/pokemon9/';
+export const fetchPoke = 'https://pokeapi.co/api/v2/pokemon/';
