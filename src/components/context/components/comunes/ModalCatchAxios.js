@@ -1,18 +1,20 @@
 import axios from 'axios';
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { useEffect } from 'react';
 import Swal from 'sweetalert2';
-import { types } from '../../store/StoreHeader';
+import { useDispatch, useStore } from '../../store/StoreProvider';
+import { types } from '../../store/StoreReducer';
 
 const ModalCatchAxios = () => {
 
-    const [error, setError] = useState(false)
+    const state = useStore();
+    const dispatch = useDispatch();
 
     axios.interceptors.response.use(function (response) {
         return response;
-    }, function (error) {
+    }, async function (error) {
         HandleSetError(error)
-        return console.log(error)
+           return console.log(error)
         // return Promise.reject(error);
     });
 
@@ -25,22 +27,25 @@ const ModalCatchAxios = () => {
                 message = error.response.statusText
             }
         }
-        
-        setError({
-            status: error.response.status,
-            text: message
+
+        dispatch({
+            type: types.catch,
+            payload: {
+                status: error.response.status,
+                text: message
+            }
         })
-        
     }
 
     useEffect(() => {
-        if (error) {
+        if (state.catch) {
             RenderAlert()
         }
-    }, [error])
+    }, [state.catch])
 
 
     const RenderAlert = async () => {
+        const error = state.catch;
         Swal.fire({
             title: 'Error ' + error.status,
             text: "Puede consular en ver mas que fue lo que paso",
@@ -57,14 +62,16 @@ const ModalCatchAxios = () => {
                     'info'
                 )
             }
-            setError(false)
+            dispatch({
+                type: types.catch,
+                payload: false
+            })
         })
     }
 
 
     return (
         <div>
-
         </div>
     )
 }

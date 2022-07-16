@@ -3,25 +3,25 @@ import { useEffect } from 'react'
 import { useStore, useDispatch } from "../store/StoreProvider";
 import { types } from '../store/StoreReducer';
 import { ExecuteGetPost } from '../utils/url';
-import ModalCatchAxios from './comunes/ModalCatchAxios';
 import axios from 'axios';
+import MyComponent from './MyComponent';
 
 
 const ListarBlog = () => {
     const dispatch = useDispatch()
     const state = useStore()
 
-    useEffect(async () => {
-        // await axios.get('https://pokeapi.co/api/v2/pokemoni/')
-        // await axios.get('https://jsonplaceholder.typicode.com/postsi/')
-        // await axios.get('https://api.aniapi.com/v1/useri/')
-        await getPost();
+    useEffect( async () => {
+        setTimeout(() => {
+            getPost();        
+        }, 2000);
     }, [])
 
     const getPost = async () => {
+        const response =  await ExecuteGetPost()
         await dispatch({
             type: types.FecthBlog,
-            payload: await ExecuteGetPost()
+            payload: response.data || []
         })
 
         await dispatch({
@@ -30,8 +30,9 @@ const ListarBlog = () => {
     }
 
     return (
-        <div className='row gx-4 w-100'>
-            <ModalCatchAxios />
+        <div className='row gx-4 w-100'>    
+        <button className='btn-danger' onClick={()=> getPost()}>EXPLOTAR</button>       
+            <MyComponent/>
             <ul className='col-6 scrolled overflow-auto p-5' style={{ height: '90vh' }}>
                 {
                     state.blogs.length != 0 ? (

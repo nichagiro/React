@@ -1,24 +1,22 @@
-import React, { useContext } from 'react'
-import Poke from '../Poke'
-import Indexin from '../Index'
-import { StoreContext } from '../Store'
-import { FetchPokemons, FetchUser } from './Actions'
+import React, { useEffect } from 'react'
+
 import ModalCatchAxios from '../../context/components/comunes/ModalCatchAxios'
+import { FetchPokemons } from '../Actions/Actions'
 
 const Index = () => {
-    const [pokeList, setpokeList] = React.useState(['NICOLAS ', 'charizard', 'dragonite', 'cartepie', 'machamp', 'lapras'])
-    const [state, setState] = useContext(StoreContext)
 
-    // React.useEffect(async () => {
-    //     await FetchPokemons(state, setState, pokeList)
-    //     await FetchUser(state, setState)
-    // }, [])
+    useEffect(() => {
+        HandleFirst()
+    }, [])
+    
+    const HandleFirst = async () => {
+        console.log((await FetchPokemons()).data)
+    }
 
     return (
         <div>
             <ModalCatchAxios />
-            <Poke state={state} setState={setState} />
-            <Indexin state={state} setState={setState} />
+            
         </div>
     )
 }

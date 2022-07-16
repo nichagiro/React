@@ -5,6 +5,7 @@ import DetailList from './DetailList';
 import axios from 'axios';
 import style from './style.css'
 
+// ! Youtube
 const Youtube = () => {
     const api = 'https://www.googleapis.com/youtube/v3/search';
     const KEY = 'AIzaSyCbxyyOBaqKUNhMVk59RJHVRgGraJYa9PQ';
@@ -13,8 +14,7 @@ const Youtube = () => {
     const [Pagination, setPagination] = useState() // se guarda el token de la paginacion de la variable videos
     const [WordKey, setWordKey] = useState() // se almacena la palabra que digito el usuario en el search
 
-    // props Traemos los videos filtrados por el component search
-    const FilterVideo = (data) => {
+    const FilterVideo = (data) => {        
         axios.get(api, {
             params:{
                 key:KEY,

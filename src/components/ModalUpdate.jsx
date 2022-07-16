@@ -17,10 +17,11 @@ const ModalUpdate = (props) => {
     });
 
     // actualiza el campo name por el que viene por props que a la ves se asigna a defaultValues
-    setValue('name',props.PokeChange.name)
+    // setValue('name',props.PokeChange.name)
     
     //envia a app.js component el nuevo nombre del pokemon 
     const changePoke = data => {
+        console.log('update',data)
         props.editPoke(data);
         reset();
     }

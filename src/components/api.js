@@ -7,29 +7,20 @@ import { GetValues } from "../actions";
 import Input from "./input";
 import { DevTool } from "@hookform/devtools";
 import { ErrorMessage } from '@hookform/error-message';
-import { setLocale } from 'yup';
-
+import es from 'yup-es'
 
 const FormHook = () => {
-    // setLocale('es')
-    // setLocale({
-    //     mixed: {
-    //       default: 'Não é válido',
-    //     },
-    //     number: {
-    //       required: 'marica debe de ser un numero',
-    //       min: 'gay mayor a ' 
-    //     },
-    //   });
+
     const [poke, setpoke] = useState([])
     const [DisabledBtn, setDisabledBtn] = useState(false)
 
     const url = 'https://pokeapi.co/api/v2/pokemon/';
 
+    yup.setLocale( es )
     const schema = yup.object({
-        pokedex: yup.number().positive('jaja').nullable().max(898).min(50) .typeError('el campo debe de ser numerico'),
-        pokedexi: yup.number().positive().required('Requerido').max(898),
-        nada: yup.string().required('campo requerido').max(2),
+        pokedex: yup.number().positive('jaja').nullable().max(898).min(50),
+        pokedexi: yup.number().positive().required().max(898),
+        nada: yup.string().required().max(2),
     }).required();
  
     const methods = useForm({

@@ -4,11 +4,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { SelectPokemon, AddFavorite } from '../../redux/features/pokemonSlice'
 import { Link } from 'react-router-dom'
 
-const DetailPoke = () => {
-
+const DetailPoke = (props) => {
     const {name} = useParams()
     const api = 'https://pokeapi.co/api/v2/pokemon/'.concat(name)
-
     const dispatch = useDispatch()
     const pokemon = useSelector(state => state.pokemons.getPoke)
     const verifyFavorite = useSelector(state => state.pokemons.pokeFavorite)
