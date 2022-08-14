@@ -1,12 +1,12 @@
 import React from "react";
-import {BrowserRouter as Router,Switch,Link} from "react-router-dom";
+import { BrowserRouter, Switch, Link } from "react-router-dom";
 import NavLink from "./components/NavLink";
 import Routes from "./Routes";
 
 const Plantilla = () => {
-    return ( 
+    return (
         <div>
-            <Router>
+            <BrowserRouter basename="/apps/react">
                 <nav className="p-3 navbar shadow navbar-expand-lg navbar-light bg-light d-flex justify-content-around">
                     <div className="w-25">
                         <Link to="/" className="navbar-brand">Inicio</Link>
@@ -14,11 +14,11 @@ const Plantilla = () => {
                     <NavLink></NavLink>
                 </nav>
                 <Switch>
-                   <Routes></Routes>
+                    <Routes></Routes>
                 </Switch>
-            </Router>
+            </BrowserRouter>
         </div>
-     );
+    );
 }
- 
+
 export default Plantilla;

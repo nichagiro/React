@@ -14,7 +14,7 @@ const ModalCatchAxios = () => {
         return response;
     }, async function (error) {
         HandleSetError(error)
-           return console.log(error)
+        return console.log(error)
         // return Promise.reject(error);
     });
 

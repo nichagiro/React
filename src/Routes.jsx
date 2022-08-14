@@ -21,8 +21,6 @@ import Context from './components/context/containers/index';
 
 
 
-
-
 function Routes() {
     return (
         <div>
